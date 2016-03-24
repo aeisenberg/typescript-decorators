@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module" : "commonjs",
+    "target": "es5",
+    "outDir": "build",
+    "sourceMap": true,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "node_modules",
+    "typings"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "typescript-decorators",
+  "version": "0.0.1",
+  "description": "A simple example of how to create decorators in typescript",
+  "main": "index.js",
+  "files": [
+    "**/*.js",
+    "**/*.js.map",
+    "!**/*_test.js",
+    "!**/*_test.js.map",
+    "!build/**/*.js",
+    "!coverage/**/*.js",
+    "!node_modules/**/*.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf build",
+    "precompile": "npm run clean",
+    "compile": "tsc",
+    "lint": "find src test -name \"*.ts\" | sed 's/^/--file=/g' | xargs tslint",
+    "setup": "git clean -xdf && npm install && npm run typings",
+    "update": "git fetch && git merge origin master && npm run setup"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Andrew Eisenberg",
+  "license": "MIT",
+  "devDependencies": {
+    "source-map-support": "^0.3.1",
+    "tsd": "^0.6.0-beta.5",
+    "tslint": "^2.1.1",
+    "typescript": "^1.4.1"
+  },
+  "typescript": {
+    "definition": "typescript-decorators.d.ts"
+  }
+}
