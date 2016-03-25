@@ -1,13 +1,13 @@
 'use strict';
 
-export function readonly<T extends Function>(target: T): T {
+export function readonly<T extends Function>(classDeclaration: T): T {
   let newConstructor = <any> function(...args: any[]) {
-    target.apply(this, args);
+    classDeclaration.apply(this, args);
     Object.freeze(this);
   };
 
-  newConstructor.prototype = Object.create(target.prototype);
-  newConstructor.prototype.constructor = target;
+  newConstructor.prototype = Object.create(classDeclaration.prototype);
+  newConstructor.prototype.constructor = classDeclaration;
 
   return <T> newConstructor;
 }

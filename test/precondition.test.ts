@@ -17,7 +17,7 @@ class Datastore {
   }
 
   // Must use function instead of => so that 'this' can be dynamically set
-  @precondition('Key must be non-empty', function(key, value) {
+  @precondition('Key must be non-empty', function(key: string, value: any) {
     return key !== null && typeof key !== 'undefined' && key.length > 0;
   })
   @precondition('Key already exists in datastore', function(key, value) {

@@ -18,7 +18,8 @@
     "compile": "tsc",
     "lint": "find src test -name \"*.ts\" | sed 's/^/--file=/g' | xargs tslint",
     "setup": "git clean -xdf && npm install && npm run typings",
-    "update": "git fetch && git merge origin master && npm run setup"
+    "update": "git fetch && git merge origin master && npm run setup",
+    "test": "nodeunit build/test/*.js"
   },
   "keywords": [
     "typescript"
@@ -26,10 +27,10 @@
   "author": "Andrew Eisenberg",
   "license": "MIT",
   "devDependencies": {
-    "source-map-support": "^0.3.1",
-    "tsd": "^0.6.0-beta.5",
-    "tslint": "^2.1.1",
-    "typescript": "^1.4.1"
+    "nodeunit": "0.9.1",
+    "source-map-support": "0.4.0",
+    "tslint": "3.6.0",
+    "typescript": "1.8.9"
   },
   "typescript": {
     "definition": "typescript-decorators.d.ts"

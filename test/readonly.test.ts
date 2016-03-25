@@ -26,8 +26,7 @@ module.exports = {
   },
 
   testReadonly(test: nodeunit.Test) {
-    this.person.name = 'hucairz';
-    test.equals('Andrew', this.person.name);
+    test.throws(() => this.person.name = 'hucairz');
     test.done();
   }
 };
