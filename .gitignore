@@ -31,3 +31,4 @@ build
 *.d.ts
 *.js
 typings
+typescript-decorators.sublime-workspace
